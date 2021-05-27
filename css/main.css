@@ -1,0 +1,101 @@
+@import url("http://fonts.googleapis.com/css?family=Pacifico|Roboto");
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #428bca; }
+
+h1.logo {
+  font-size: 4rem;
+  font-family: 'Pacifico', cursive;
+  color: #fff; }
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#form-box {
+  background: #fff;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 500px;
+  transition: transform .2s ease-in-out; }
+
+#form-box.close {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0); }
+
+#prev-btn {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  cursor: pointer;
+  z-index: 2; }
+
+#next-btn {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+  float: right; }
+
+#input-group {
+  position: relative;
+  padding: 30px 20px 20px 20px;
+  margin: 10px 60px 10px 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; }
+  #input-group input {
+    width: 100%;
+    position: relative;
+    border: none;
+    outline: none; }
+  #input-group #input-label {
+    position: absolute;
+    top: 30px;
+    left: 22px;
+    font-size: 18px;
+    transition: 0.2s ease-in-out;
+    pointer-events: none; }
+  #input-group input:valid + #input-label {
+    font-size: 12px;
+    left: 40px;
+    top: 5px;
+    margin-left: 0 !important; }
+
+#input-progress {
+  border-bottom: 3px solid #428bca;
+  width: 0;
+  transition: width 0.6s ease-in-out; }
+
+#progress-bar {
+  position: absolute;
+  background: #b9d4ec;
+  width: 0;
+  height: 10px;
+  transition: width .4s ease-in-out; }
+
+.error #input-progress {
+  border-color: red; }
+
+.error #next-btn {
+  color: red; }
+
+@media (max-width: 600px) {
+  h1.logo {
+    font-size: 3rem; }
+  #form-box {
+    width: 80%; }
+  #input-group #input-label {
+    font-size: 80%; } }
+
+@media (max-width: 300px) {
+  h1.logo {
+    font-size: 2rem; }
+  #input-group #input-label {
+    font-size: 50%; } }
